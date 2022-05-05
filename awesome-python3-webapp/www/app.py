@@ -16,3 +16,5 @@ async def init_app():
 loop = asyncio.get_event_loop()
 app = loop.run_until_complete(init_app())
 web.run_app(app, port='9086', host='127.0.0.1')
+import torch
+torch.nn.MSELoss
