@@ -1,10 +1,12 @@
-from urllib import request
-import random
-from ua_info import ua_list
-url = 'https://www.maoyan.com/board/4?timeStamp=1658563665442&channelId=40011&index=9&signKey=84bbd1e5f3c81418aed5217329d21c28&sVersion=1&webdriver=false&offset=20'
-# 请求函数
-headers = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"}
-req = request.Request(url=url, headers=headers)
-res = request.urlopen(req)
-html = res.read().decode()
-print(html)
+import pymysql
+db = pymysql.connect(host='localhost',user='root',password='pyh168861',database='maoyandb')
+cursor = db.cursor()
+# sql语句执性，单行插入
+info_list = ['刺杀,小说家','雷佳音,杨幂','2021-2-12']
+sql = 'insert into filmtab values(%s,%s,%s)'
+#列表传参
+cursor.execute(sql,info_list)
+db.commit()
+# 关闭
+cursor.close()
+db.close()

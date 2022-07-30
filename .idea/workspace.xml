@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="858b9a63-ce36-4ff2-a6c3-ec491d7c681a" name="变更" comment="">
+    <list default="true" id="858b9a63-ce36-4ff2-a6c3-ec491d7c681a" name="变更" comment="2022.7.30">
+      <change afterPath="$PROJECT_DIR$/interesting/web_spider/spider_4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interesting/web_spider/spider_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/interesting/web_spider/spider_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interesting/web_spider/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/interesting/web_spider/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +163,14 @@
       <option name="presentableId" value="Default" />
       <updated>1658050753388</updated>
     </task>
+    <task id="LOCAL-00001" summary="2022.7.30">
+      <created>1659166875163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659166875163</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,5 +183,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2022.7.30" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.7.30" />
   </component>
 </project>

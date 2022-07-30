@@ -1,4 +1,5 @@
 #爬取猫眼电影榜单信息
+#猫眼的反爬无法破解
 from urllib import request
 import re
 import time
