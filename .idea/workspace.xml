@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="858b9a63-ce36-4ff2-a6c3-ec491d7c681a" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/interesting/web_spider/spider_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interesting/web_spider/spider_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interesting/web_spider/spider_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interesting/web_spider/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interesting/web_spider/ua_info.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interesting/web_spider.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
