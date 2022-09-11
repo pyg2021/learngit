@@ -4,6 +4,7 @@ import re
 import time
 import random
 import pymysql
+#pymysql远程连接数据库的操作工具
 from hashlib import md5
 from ua_info import ua_list
 import sys
@@ -15,23 +16,27 @@ class MovieSkySpider(object):
         self.db = pymysql.connect(
             host='localhost', user='root', password='pyh168861', database='movieskydb',charset='utf8'
         )
+        #创建新的connetion类，与数据库建立连接
         self.cursor = self.db.cursor()
+        #返回新的游标变量，实现对于数据库的操作，在连接关闭之前能够对于游标对象反复使用
 
     # 1.请求函数
     def get_html(self, url):
         headers = {'User-Agent': random.choice(ua_list)}
+        #随机选择代理的地址
         req = request.Request(url=url, headers=headers)
+        #在urllib中的request.Request模块能够加入headers等信息，来发起请求
         res = request.urlopen(req)
+        #urlopen()方法可以实现最基本的请求的发起
         # 本网站使用gb2312的编码格式
         html = res.read().decode('gb2312', 'ignore')
-
+        #对于得到的数据按制定的格式进行解码
         return html
 
     # 2.正则解析函数
     def re_func(self, re_bds, html):
         pattern = re.compile(re_bds, re.S)
         r_list = pattern.findall(html)
-
         return r_list
 
     # 3.提取数据函数
@@ -46,7 +51,9 @@ class MovieSkySpider(object):
             # 判断是否需要爬取此链接
             # 1.获取指纹
             # 拼接二级页面url
+            # print(link)
             two_url = 'https://www.dytt8.net' + link
+            print(two_url)
             s = md5()
             # 加密url，需要是字节串
             s.update(two_url.encode())
@@ -77,8 +84,7 @@ class MovieSkySpider(object):
     # 5.解析二级页面，获取数据（名称与下载链接）
     def save_html(self, two_url):
         two_html = self.get_html(two_url)
-        re_bds = '<div class="title_all"><h1><font color=#07519a>(.*?)</font></h1> \
-        </div>.*?<a.*?href="(.*?)".*?>.*?style="BACKGROUND-COLOR:.*?</a>'
+        re_bds = '<div class="title_all"><h1><font color="#07519"a>(.*?)</font></h1></div>.*?<a.*?href="(.*?)".*?>.*?style='
         # film_list: [('name','downloadlink'),(),(),()]
         film_list = self.re_func(re_bds, two_html)
         print(film_list)
@@ -91,7 +97,7 @@ class MovieSkySpider(object):
     # 主函数
     def run(self):
         # 二级页面后四页的正则表达式略有不同，需要重新分析
-        for i in range(1, 4):
+        for i in range(1, 5):
             url = self.url.format(i)
             self.parse_html(url)
 

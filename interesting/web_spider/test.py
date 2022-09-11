@@ -1,12 +1,21 @@
+from urllib import request
+import re
+import time
+import random
 import pymysql
-db = pymysql.connect(host='localhost',user='root',password='pyh168861',database='maoyandb')
-cursor = db.cursor()
-# sql语句执性，单行插入
-info_list = ['刺杀,小说家','雷佳音,杨幂','2021-2-12']
-sql = 'insert into filmtab values(%s,%s,%s)'
-#列表传参
-cursor.execute(sql,info_list)
-db.commit()
-# 关闭
-cursor.close()
-db.close()
+#pymysql远程连接数据库的操作工具
+from hashlib import md5
+from ua_info import ua_list
+import sys
+
+url='https://www.dytt8.net/html/gndy/dyzz/list_23_1.html'
+headers = {'User-Agent': random.choice(ua_list)}
+# 随机选择代理的地址
+req = request.Request(url=url, headers=headers)
+# 在urllib中的request.Request模块能够加入headers等信息，来发起请求
+res = request.urlopen(req)
+# urlopen()方法可以实现最基本的请求的发起
+# 本网站使用gb2312的编码格式
+# print(res.read())
+html = res.read().decode('gb2312', 'ignore')
+print(html)
